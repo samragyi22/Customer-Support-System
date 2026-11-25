@@ -1,0 +1,22 @@
+{
+  "name": "customer-support-system",
+  "version": "1.0.0",
+  "description": "MongoDB schema design for a customer support ticketing system (ticket priority, assignment, SLA tracking)",
+  "main": "index.js",
+  "scripts": {
+    "init-db":     "node scripts/init-db.js",
+    "seed":        "node scripts/seed.js",
+    "test:validate": "node scripts/test-validation.js",
+    "test:indexes":  "node scripts/test-indexes.js",
+    "test":        "node scripts/test-validation.js && node scripts/test-indexes.js",
+    "start":       "node scripts/init-db.js && node scripts/seed.js"
+  },
+  "dependencies": {
+    "mongodb": "^6.5.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "author": "",
+  "license": "MIT"
+}

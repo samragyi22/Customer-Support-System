@@ -1,0 +1,22 @@
+version: "3.9"
+
+# ---------------------------------------------------------------
+# Spins up a single-node MongoDB 7 instance for local development.
+# Run:  docker-compose up -d
+# Stop: docker-compose down
+# ---------------------------------------------------------------
+
+services:
+  mongo:
+    image: mongo:7.0
+    container_name: css_mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"           # accessible at mongodb://localhost:27017
+    environment:
+      MONGO_INITDB_DATABASE: customer_support
+    volumes:
+      - mongo_data:/data/db     # persist data between restarts
+
+volumes:
+  mongo_data:
